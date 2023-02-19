@@ -1,5 +1,28 @@
 {
   "dependencies": {
-    "cjs-loader": "^0.1.0"
-  }
+    "chalk": "^5.2.0",
+    "cjs-loader": "^0.1.0",
+    "colors": "^1.4.0",
+    "simple-node-logger": "^21.8.12"
+  },
+  "name": "projects",
+  "version": "1.0.0",
+  "description": "A node js tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aayushdc/Node-js.git"
+  },
+  "keywords": [
+    "aayush"
+  ],
+  "author": "Aayush Dc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aayushdc/Node-js/issues"
+  },
+  "homepage": "https://github.com/aayushdc/Node-js#readme"
 }
