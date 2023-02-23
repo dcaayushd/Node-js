@@ -1,19 +1,7 @@
-const fs = require('fs');
-const path = require('path');
+let a =10;
+let b = 20;
 
-const dirPath = path.join(__dirname, 'crud')
-const filePath = `${dirPath}/apple.txt`
-// fs.writeFileSync(filePath,'This is a simple txt file')
-// fs.readFile(filePath,'utf8',(err, item)=>{
-//     console.log(item);
-// })
-// fs.appendFile(filePath, ' and file name is apple.txt', (err)=>{
-//     if(!err) console.log('File is updated Successfully')
-//     else console.log('Append failed')
-// })
-fs.rename(filePath, `${dirPath}/fruit.txt`, (err)=>{
-    if(!err) console.log('File is updated Successfully')
-    else console.log('File Renaming failed')
-})
-
-// fs.unlinkSync(`${dirPath}/fruit.txt`)
+setTimeout(() => {
+    b = 50;
+}, 2000)
+console.log(a+b)

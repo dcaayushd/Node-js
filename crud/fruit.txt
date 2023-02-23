@@ -1,1 +1,0 @@
-This is a simple txt file and file name is apple.txt
