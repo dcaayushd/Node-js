@@ -1,17 +1,14 @@
-let a =10;
-let b = 20;
+console.log('Starting Log....')
+
+setTimeout(()=>{
+    console.log('2 Second Log....')
+
+}, 2000)
 
 
+setTimeout(()=>{
+    console.log('0 Second Log....')
 
-let waitingData = new Promise((resolve, reject)=>{
-    setTimeout(() => {
-       resolve(50);
-    }, 2000)
-    
-})
+}, 0)
 
-waitingData.then((data)=>{
-    b = data;
-    console.log(a+b)
-
-})
+console.log('Finishing Log....')
