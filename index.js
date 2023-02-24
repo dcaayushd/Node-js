@@ -1,23 +1,35 @@
-const express = require('express')
-const path = require('path')
+const express = require('express');
+const path = require('path');
 
-const app = express()
-const publicPath = path.join(__dirname,'/public')
-
-// app.use(express.static(publicPath))
-
-app.get('',(_,res)=>{
-    res.sendFile(`${publicPath}/index.html`)
-})
-app.get('/about',(_,res)=>{
-    res.sendFile(`${publicPath}/about.html`)
-})
-app.get('/help',(_,res)=>{
-    res.sendFile(`${publicPath}/help.html`)
-})
-app.get('*',(_,res)=>{
-    res.sendFile(`${publicPath}/404.html`)
-})
+const app = express();
+const publicPath=path.join(__dirname,'public')
 
 
-app.listen(4000)
+app.set('view engine','ejs');
+
+app.get('',(_,resp)=>{
+    resp.sendFile(`${publicPath}/index.html`)
+});
+
+app.get('/profile',(_,resp)=>{
+    const user={
+        name:'Aayush',
+        email:'aayush@test.com',
+        country:'Nepal'
+    }
+   resp.render('profile',{user})
+});
+
+app.get('/contact',(_,resp)=>{
+    resp.sendFile(`${publicPath}/about.html`)
+});
+
+app.get('/help',(_,resp)=>{
+    resp.sendFile(`${publicPath}/help.html`)
+});
+
+app.get('*',(_,resp)=>{
+    resp.sendFile(`${publicPath}/404.html`)
+});
+
+app.listen(4000);
