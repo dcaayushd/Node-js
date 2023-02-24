@@ -15,10 +15,22 @@ app.get('/profile',(_,resp)=>{
     const user={
         name:'Aayush',
         email:'aayush@test.com',
-        country:'Nepal'
+        country:'Nepal',
+        skills:[
+            'c',
+            'c++',
+            'java', 
+            'android', 
+            'dart', 
+            'node',
+        ]
     }
    resp.render('profile',{user})
 });
+
+app.get('/login', (_, res)=>{
+    res.render('login')
+})
 
 app.get('/contact',(_,resp)=>{
     resp.sendFile(`${publicPath}/about.html`)
