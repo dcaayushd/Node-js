@@ -1,14 +1,16 @@
-console.log('Starting Log....')
+const express = require('express')
+const app = express()
 
-setTimeout(()=>{
-    console.log('2 Second Log....')
-
-}, 2000)
-
-
-setTimeout(()=>{
-    console.log('0 Second Log....')
-
-}, 0)
-
-console.log('Finishing Log....')
+app.get('',(req, res)=>{
+    res.send('Welcome User, This is a home page')
+})
+app.get('/about',(req, res)=>{
+    res.send('Welcome User, This is a About page')
+})
+app.get('/help',(req, res)=>{
+    res.send('Welcome User, This is a Help page')
+})
+app.get('/contact',(req, res)=>{
+    res.send('Welcome User, This is a Contact page')
+})
+app.listen(4000)
