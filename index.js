@@ -9,12 +9,12 @@ const dbConnect = require('./mongodb')
 //     })
 // })
 
-const result = async () =>{
+const output = async () =>{
     let data = await dbConnect()
    data = await data.find({name:'A30'}).toArray();
    console.warn(data)
 }
 
-result()
+output()
 
 // console.warn(dbConnect())

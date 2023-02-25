@@ -7,6 +7,7 @@ async function dbConnect() {
     let result = await client.connect();
     let db = result.db(database);
     return db.collection('products')
+    await client.close();
 }
 
 module.exports = dbConnect;
