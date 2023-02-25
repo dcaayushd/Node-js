@@ -22,28 +22,28 @@ const insert = async () => {
         const db = await dbConnect()
         const products = [
             {
-                name: 'Nord CE 2 Lite 5G',
-                brand: 'OnePlus',
-                price: 349,
+                name: 'Iphone XR',
+                brand: 'Apple',
+                price: 449,
                 category: 'mobile'
             },
             {
-                name: '11 Pro',
-                brand: 'OnePlus',
-                price: 869,
+                name: 'Iphone 14 Pro',
+                brand: 'Apple',
+                price: 899,
                 category: 'mobile'
             },
             {
-                name: 'Nord 2',
-                brand: 'OnePlus',
-                price: 569,
+                name: 'Iphone 11',
+                brand: 'Apple',
+                price: 249,
                 category: 'mobile'
             },
 
         ]
         const result = await db.insertMany(products)
         if (result.acknowledged) {
-            console.log(`${result.insertedCount} documents were inserted`);
+            console.log(`${result.insertedCount} products were inserted`);
 
         }
 }
