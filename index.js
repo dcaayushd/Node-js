@@ -1,28 +1,27 @@
-const express = require('express')
-const EventEmitter = require('events')
+const mysql= require("mysql");
 
-const app = express()
-const event = new EventEmitter()
+const con= mysql.createConnection({
+  host:"localhost",
+  user:"root",
+  password:"",
+  database:"test"
+});
 
-let count = 0
+// con.connect((err)=>{
+//   if(err)
+//   {
+//     console.warn("not connected!!!")
+//   }else{
+//     console.warn("connected!!!")
+//   }
+// })
 
-event.on('countAPI',()=>{
-    count++
-    console.log('Event called', count)
+con.query("select * from users",(err,result)=>{
+  if(err)
+  {
+    console.warn("some error")
+  }
+  else{
+    console.warn(result)
+  }
 })
-
-app.get('/', (req, res)=>{
-    res.send('api called')
-    event.emit('countAPI')
-})
-app.get('/update', (req, res)=>{
-    res.send('update api called')
-    event.emit('countAPI')
-
-})
-app.get('/search', (req, res)=>{
-    res.send('search api called')
-    event.emit('countAPI')
-})
-
-app.listen(4002)
