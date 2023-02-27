@@ -23,5 +23,14 @@ app.post("/",(req,resp)=>{
     })
   });
 
+  app.put("/:id",(req,resp)=>{
+    const data= [req.body.name,req.body.password,req.body.user_type,req.params.id];
+    con.query("UPDATE users SET name = ?, password = ?, user_type = ? WHERE id = ?",
+    data,(error,results,fields)=>{
+      if(error) throw error;
+      resp.send(results)
+    })
+  })
+
 
 app.listen("4000")
